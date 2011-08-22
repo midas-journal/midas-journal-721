@@ -1,0 +1,127 @@
+%
+% Complete documentation on the extended LaTeX markup used for Insight
+% documentation is available in ``Documenting Insight'', which is part
+% of the standard documentation for Insight.  It may be found online
+% at:
+%
+%     http://www.itk.org/
+
+\documentclass{InsightArticle}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  hyperref should be the last package to be loaded.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[dvips,
+bookmarks,
+bookmarksopen,
+backref,
+colorlinks,linkcolor={blue},citecolor={blue},urlcolor={blue},
+]{hyperref}
+% to be able to use options in graphics
+\usepackage{graphicx}
+% for pseudo code
+\usepackage{listings}
+% subfigures
+\usepackage{subfigure}
+
+
+%  This is a template for Papers to the Insight Journal. 
+%  It is comparable to a technical report format.
+
+% The title should be descriptive enough for people to be able to find
+% the relevant document. 
+\title{}
+
+% 
+% NOTE: This is the last number of the "handle" URL that 
+% The Insight Journal assigns to your paper as part of the
+% submission process. Please replace the number "1338" with
+% the actual handle number that you get assigned.
+%
+\newcommand{\IJhandlerIDnumber}{}
+
+% Increment the release number whenever significant changes are made.
+% The author and/or editor can define 'significant' however they like.
+\release{0.00}
+
+% At minimum, give your name and an email address.  You can include a
+% snail-mail address if you like.
+\author{}
+\authoraddress{}
+
+\begin{document}
+
+
+
+./sp ../images/cthead1.tif sp.png 0.016
+./speckle ../images/cthead1.tif speckle.png 0.24
+./gauss ../images/cthead1.tif gauss.png 22.8
+./shot ../images/cthead1.tif shot.png 0.15
+
+
+
+
+%
+% Add hyperlink to the web location and license of the paper.
+% The argument of this command is the handler identifier given
+% by the Insight Journal to this paper.
+% 
+\IJhandlefooter{\IJhandlerIDnumber}
+
+\maketitle
+
+\ifhtml
+\chapter*{Front Matter\label{front}}
+\fi
+
+
+\begin{abstract}
+\noindent
+% The abstract should be a paragraph or two long, and describe the
+% scope of the document.
+\end{abstract}
+
+\IJhandlenote{\IJhandlerIDnumber}
+
+\tableofcontents
+
+
+% \url{http://www.itk.org}
+% \code{Insight/Documentation/Style.pdf}
+% \section{Principles of Solar Spot Detection}
+% \cite{ITKSoftwareGuide}.
+% \doxygen{ImageToImageFilter}
+
+% \small \begin{verbatim}
+% \end{verbatim} \normalsize
+
+
+% The {itemize} environment uses a bullet for each \item.  If you want the 
+% \item's numbered, use the {enumerate} environment instead.
+% \begin{itemize}
+%   \item  Insight Toolkit 2.4.
+%   \item  CMake 2.2
+% \end{itemize}
+
+% \ref{cthead1}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{cthead1}
+\caption{The input image.\label{cthead1}}
+\end{figure}
+
+
+\appendix
+
+
+
+\bibliographystyle{plain}
+\bibliography{InsightJournal}
+\nocite{ITKSoftwareGuide}
+
+\end{document}
+
